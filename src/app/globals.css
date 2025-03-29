@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-all;
+  }
+  
+  .section-title {
+    @apply text-3xl sm:text-4xl font-bold text-center mb-12;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden;
+  }
+  
+  .event-badge {
+    @apply inline-block px-2 py-1 text-xs font-semibold rounded-full;
+  }
+} 

@@ -23,9 +23,9 @@ const buildWithAIEvent = {
     'Networking con expertos'
   ],
   prizes: [
-    '🥇 $5,000 USD (1er lugar)',
-    '🥈 $3,000 USD (2do lugar)',
-    '🥉 $1,500 USD (3er lugar)'
+    '1er lugar: $5,000 USD',
+    '2do lugar: $3,000 USD',
+    '3er lugar: $1,500 USD'
   ]
 };
 
@@ -76,9 +76,29 @@ const BuildWithAISection = () => {
             </span>
             <h3 className="text-2xl md:text-3xl font-bold mb-4">{buildWithAIEvent.title}</h3>
             <div className="flex flex-col sm:flex-row mb-4 text-gray-600">
-              <span className="mr-4 mb-2 sm:mb-0">📅 {buildWithAIEvent.date}</span>
-              <span className="mr-4 mb-2 sm:mb-0">⏰ {buildWithAIEvent.time}</span>
-              <span>📍 {buildWithAIEvent.location}</span>
+              <span className="mr-4 mb-2 sm:mb-0 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                {buildWithAIEvent.date}
+              </span>
+              <span className="mr-4 mb-2 sm:mb-0 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                {buildWithAIEvent.time}
+              </span>
+              <span className="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                {buildWithAIEvent.location}
+              </span>
             </div>
             <p className="text-gray-600 mb-4">{buildWithAIEvent.description}</p>
             <p className="text-red-500 font-medium mb-6">{buildWithAIEvent.registrationCloses}</p>
@@ -113,7 +133,13 @@ const BuildWithAISection = () => {
               <h5 className="font-semibold mb-2">Premios:</h5>
               <ul className="space-y-1">
                 {buildWithAIEvent.prizes.map((prize, index) => (
-                  <li key={index} className="text-sm">{prize}</li>
+                  <li key={index} className="text-sm flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-yellow-500 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="8" r="6"></circle>
+                      <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                    </svg>
+                    {prize}
+                  </li>
                 ))}
               </ul>
             </div>
